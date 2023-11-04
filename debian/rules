@@ -1,4 +1,23 @@
 #!/usr/bin/make -f
 
+export PYBUILD_NAME=pydocstyle
+
+# skip test_integration at build time
+# (cannot install_package from .pybuild directory)
+export PYBUILD_TEST_ARGS=--ignore=tests/test_integration.py
+
+DEBDATE := $(shell dpkg-parsechangelog -Sdate | date -u +%F -f -)
+
 %:
-	dh $@
+	dh $@ --buildsystem=pybuild
+
+execute_after_dh_install:
+	dh_install --sourcedir=debian/python3-pydocstyle --package=pydocstyle usr/bin/pydocstyle usr/bin
+	rm -rf debian/python3-pydocstyle/usr/bin
+
+override_dh_installchangelogs:
+	dh_installchangelogs docs/release_notes.rst
+
+override_dh_installman:
+	PYTHONPATH=./src python3 -m sphinx -D today_fmt="$(DEBDATE)" -N -bman docs .pybuild
+	dh_installman .pybuild/pydocstyle.1

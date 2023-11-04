@@ -1,0 +1,12 @@
+# See https://github.com/PyCQA/pydocstyle/issues/177
+Test-Command: set -e
+ ; cp -r src/tests "$AUTOPKGTEST_TMP"
+ ; sed -i /^pytestmark/d "$AUTOPKGTEST_TMP/tests/test_integration.py"
+ ; for py in $(py3versions -s)
+ ; do cd "$AUTOPKGTEST_TMP"
+ ; echo "Testing with $py:"
+ ; $py -m pytest -v tests
+ ; done
+Depends: python3-all,
+         python3-pytest,
+         @

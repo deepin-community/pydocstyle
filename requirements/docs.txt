@@ -1,0 +1,5 @@
+Jinja2
+sphinx
+sphinx_rtd_theme
+# adding . so that pydocstyle gets installed
+.

@@ -1,5 +1,145 @@
-template-repository (1.0-1) unstable; urgency=medium
+pydocstyle (6.3.0-1) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
+  * New upstream version 6.3.0
+  * Update version number in patch
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Jochen Sprickerhof <jspricke@debian.org>  Mon, 12 Jun 2023 17:49:25 +0200
+
+pydocstyle (6.2.3-3) unstable; urgency=medium
+
+  * Team upload
+  * Fix wrong version number 0.0.0.dev0 (upstream bug #631)
+
+ -- Benjamin Drung <bdrung@debian.org>  Thu, 16 Feb 2023 15:39:38 +0100
+
+pydocstyle (6.2.3-2) unstable; urgency=medium
+
+  * Team upload
+  * Add Breaks: python3-spyder (<< 5.4.2)
+  * This new version Closes: #1028425 (should have included this in the
+    previous changelog entry!)
+
+ -- Julian Gilbey <jdg@debian.org>  Sun, 22 Jan 2023 06:49:23 +0000
+
+pydocstyle (6.2.3-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version
+  * Update d/watch for new upstream URL
+  * Run all tests in autopkgtest, including integration tests
+
+ -- Julian Gilbey <jdg@debian.org>  Wed, 11 Jan 2023 21:11:01 +0000
+
+pydocstyle (6.1.1-1) unstable; urgency=medium
+
+  [ Diego M. Rodriguez ]
+  * Team upload.
+  * d/copyright: do not exclude .gitignore
+  * New upstream version 6.1.1 (Closes: #890048, #955149)
+  * d/patches: drop issuetracker patch
+  * d/control: refresh dependencies
+  * d/copyright: refresh copyright
+  * d/watch: bump version to 4
+  * d/upstream: update metadata info
+  * d/: add lintian override for data/*.txt
+  * d/tests: update dependencies, add autopkgtest-pkg-python
+  * d/control: add Rules-Requires-Root: no
+  * d/control: bump Standards-Version to 4.6.0
+
+  [ Jeroen Ploemen ]
+  * Tests: remove unused python3-setuptools dep from autopkgtest.
+
+ -- Diego M. Rodriguez <diego@moreda.io>  Mon, 11 Oct 2021 08:26:20 +0000
+
+pydocstyle (2.1.1-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use 'python3 -m sphinx' instead of sphinx-build for building docs
+  * Use debhelper-compat instead of debian/compat.
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Debian Janitor ]
+  * Use secure URI in Homepage field.
+  * Bump debhelper from old 11 to 12.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Bump debhelper from old 12 to 13.
+  * Remove constraints unnecessary since buster:
+    + python3-pydocstyle: Drop versioned constraint on pydocstyle in Replaces.
+    + python3-pydocstyle: Drop versioned constraint on pydocstyle in Breaks.
+
+ -- Sandro Tosi <morph@debian.org>  Wed, 15 Sep 2021 23:14:53 -0400
+
+pydocstyle (2.1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 4.1.4.
+    * Use https in Format field in d/copyright.
+  * Bump compat to 11.
+  * Update Vcs-* to salsa.
+  * Remove unused X-Python3-Version.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Tue, 05 Jun 2018 09:46:22 +0800
+
+pydocstyle (2.0.0-1) unstable; urgency=medium
+
+  * Merge to unstable.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Sun, 18 Jun 2017 21:35:52 +0800
+
+pydocstyle (2.0.0-1~exp3) experimental; urgency=medium
+
+  [ ChangZhuo Chen (陳昌倬) ]
+  * Simplify debian/rules.
+    Thanks to Ghislain Antony Vaillant.
+
+  [ Ghislain Antony Vaillant ]
+  * Normalize the build and DEP-8 tests.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Mon, 12 Jun 2017 21:42:43 +0800
+
+pydocstyle (2.0.0-1~exp2) experimental; urgency=medium
+
+  * Add python3-pydocstyle as Python 3 library package (Closes: #864545).
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Sat, 10 Jun 2017 22:26:24 +0800
+
+pydocstyle (2.0.0-1~exp1) experimental; urgency=medium
+
+  * New upstream release (Closes: #846591).
+  * Bump compat to 10.
+  * Change Uploaders to ChangZhuo Chen (Closes: #863364).
+  * Change section to devel.
+  * Update Vcs-* fields to use Git as VCS.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Mon, 29 May 2017 11:10:14 +0800
+
+pydocstyle (1.0.0-3) unstable; urgency=medium
+
+  * Ship transition tool /usr/bin/pep257:
+    + don't strip pep257 from the binary package in deb/rules.
+    + add Conflicts and Replaces against pep257 in deb/control.
+    + add pep257 to lintian override.
+  * deb/control:
+    + bumped standards to 3.9.8 (no changes needed).
+
+ -- Daniel Stender <stender@debian.org>  Wed, 29 Jun 2016 09:30:20 +0200
+
+pydocstyle (1.0.0-2) unstable; urgency=medium
+
+  * added deb/source/options (ignore egg-info).
+  * deb/rules: skip test_integration completely temporarily (see comment,
+    also changed in deb/tests/pydocstyle).
+  * dropped fix-tests-py3-environment.patch (not needed anymore).
+
+ -- Daniel Stender <stender@debian.org>  Sun, 06 Mar 2016 12:27:53 +0100
+
+pydocstyle (1.0.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #816498).
+
+ -- Daniel Stender <stender@debian.org>  Wed, 02 Mar 2016 21:10:58 +0100

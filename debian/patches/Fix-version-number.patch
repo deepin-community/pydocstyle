@@ -1,0 +1,22 @@
+From: Benjamin Drung <benjamin.drung@canonical.com>
+Date: Thu, 16 Feb 2023 15:37:13 +0100
+Subject: Fix version number
+
+Bug: https://github.com/PyCQA/pydocstyle/issues/631
+Signed-off-by: Benjamin Drung <benjamin.drung@canonical.com>
+---
+ pyproject.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index 84bfe0d..a5b6411 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,6 +1,6 @@
+ [tool.poetry]
+ name = "pydocstyle"
+-version = "0.0.0-dev"
++version = "6.3.0"
+ description = "Python docstring style checker"
+ authors = ["Amir Rachum <amir@rachum.com>", "Sambhav Kothari <sambhavs.email@gmail.com"]
+ license = "MIT"

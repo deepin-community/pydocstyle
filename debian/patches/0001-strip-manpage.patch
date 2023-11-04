@@ -1,0 +1,21 @@
+From: Daniel Stender <stender@debian.org>
+Date: Wed, 6 Oct 2021 21:50:03 +0200
+Subject: strip release notes and license from manpage
+
+Forwarded: not needed
+---
+ docs/index.rst | 3 ---
+ 1 file changed, 3 deletions(-)
+
+--- a/docs/index.rst
++++ b/docs/index.rst
+@@ -23,9 +23,6 @@
+ 
+    usage
+    error_codes
+-   release_notes
+-   license
+-
+ 
+ Credits
+ =======
